@@ -1,4 +1,4 @@
-package com.dreamage
+package com.fromnow
 
 import android.app.Application
 import com.facebook.react.PackageList
