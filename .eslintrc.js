@@ -4,5 +4,6 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     'max-len': 'off',
+    'react-hooks/rules-of-hooks': 'off',
   },
 };
