@@ -1,11 +1,11 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import HomeScreen from 'screens/HomeScreen';
-import DetailMenuScreen from 'screens/DetailMenuScreen';
+import SignInScreen from 'screens/SignInScreen';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -16,26 +16,18 @@ function App() {
       {!isWeb && (
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen
-              name="Home"
-              options={{headerShown: false}}
-              component={HomeScreen}
-            />
-          <Stack.Screen
-            name="DetailMenu"
-            options={{headerShown: false}}
-            component={DetailMenuScreen}
-            />
-        </Stack.Navigator>
-      </NavigationContainer>
+            <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
+            <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
       )}
       {isWeb && (
-        <Routes>
         <Router>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/menu/detail" element={<DetailMenuScreen />} />
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/signin" element={<SignInScreen />} />
+          </Routes>
         </Router>
-      </Routes>
       )}
     </>
   );

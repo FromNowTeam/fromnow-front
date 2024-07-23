@@ -1,6 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "strict": false,
     "jsx": "react-native",
     "moduleResolution": "node",
     "baseUrl": "./src",
@@ -10,6 +11,8 @@
       "@screens/*": ["screens/*"],
       "@assets/*": ["assets/*"],
       "@style/*": ["style/*"],
+      "@hooks/*": ["hooks/*"],
+      "@utils/*": ["utils/*"],
     },
   },
 }
