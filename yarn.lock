@@ -1604,6 +1604,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mj-studio/js-util@npm:1.1.3":
+  version: 1.1.3
+  resolution: "@mj-studio/js-util@npm:1.1.3"
+  checksum: 10c0/10f7bedbd2cf44055fc6a5d3ed2b8c9cca7d904a042b1d767447bb3d3df23a31ae36e691d788bf4816f3cc6ad0d4865e97d773e75d40b62ee8e64bf60a1b8086
+  languageName: node
+  linkType: hard
+
 "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1":
   version: 5.1.1-v1
   resolution: "@nicolo-ribaudo/eslint-scope-5-internals@npm:5.1.1-v1"
@@ -1864,6 +1871,33 @@ __metadata:
     react-dom:
       optional: true
   checksum: 10c0/b2f416b1546375218811d6e0dbb44d382598716ec534955017198d932d016aecd899b9eb839e2445a7aab72cf5ece168e8afeeadf2baedced1bf3a730f5e1cb8
+  languageName: node
+  linkType: hard
+
+"@react-native-kakao/core@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@react-native-kakao/core@npm:2.2.5"
+  dependencies:
+    crypto-js: "npm:^4.2.0"
+    query-string: "npm:^9.0.0"
+    return-fetch: "npm:^0.4.5"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/3196046119c654c5809bc198f472d4268ac6b06dfe1227fd34d9101fb40086152b5a00bf43f41c8735107f2e5bf6aa8b7bcb9deace6cfdcefdfb319fd10f9dd4
+  languageName: node
+  linkType: hard
+
+"@react-native-kakao/user@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "@react-native-kakao/user@npm:2.2.5"
+  dependencies:
+    "@mj-studio/js-util": "npm:1.1.3"
+  peerDependencies:
+    "@react-native-kakao/core": 2.2.5
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/36f3c85ef0ed10ef4bf2050571abb18bd857b3a0a140ceb85bd7d5d0692b4d58ae95570cc1f4f72538890577d84a5a0f092c9279973e4988ab11133bcf4978ca
   languageName: node
   linkType: hard
 
@@ -3180,6 +3214,8 @@ __metadata:
     "@babel/preset-react": "npm:^7.24.7"
     "@babel/runtime": "npm:^7.24.8"
     "@react-native-google-signin/google-signin": "npm:^12.2.1"
+    "@react-native-kakao/core": "npm:^2.2.5"
+    "@react-native-kakao/user": "npm:^2.2.5"
     "@react-native/babel-preset": "npm:0.74.85"
     "@react-native/eslint-config": "npm:0.74.83"
     "@react-native/metro-config": "npm:0.74.85"
@@ -3197,6 +3233,7 @@ __metadata:
     babel-loader: "npm:^9.1.3"
     babel-plugin-module-resolver: "npm:^5.0.2"
     css-loader: "npm:^7.1.2"
+    dotenv: "npm:^16.4.5"
     eslint: "npm:^8.19.0"
     html-webpack-plugin: "npm:^5.6.0"
     jest: "npm:^29.7.0"
@@ -4602,6 +4639,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crypto-js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "crypto-js@npm:4.2.0"
+  checksum: 10c0/8fbdf9d56f47aea0794ab87b0eb9833baf80b01a7c5c1b0edc7faf25f662fb69ab18dc2199e2afcac54670ff0cd9607a9045a3f7a80336cccd18d77a55b9fdf0
+  languageName: node
+  linkType: hard
+
 "css-color-keywords@npm:^1.0.0":
   version: 1.0.0
   resolution: "css-color-keywords@npm:1.0.0"
@@ -4820,6 +4864,13 @@ __metadata:
   version: 0.2.2
   resolution: "decode-uri-component@npm:0.2.2"
   checksum: 10c0/1f4fa54eb740414a816b3f6c24818fbfcabd74ac478391e9f4e2282c994127db02010ce804f3d08e38255493cfe68608b3f5c8e09fd6efc4ae46c807691f7a31
+  languageName: node
+  linkType: hard
+
+"decode-uri-component@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "decode-uri-component@npm:0.4.1"
+  checksum: 10c0/a180bbdb5398ec8270d236a3ac07cb988bbf6097428481780b85840f088951dc0318a8d8f9d56796e1a322b55b29859cea29982f22f9b03af0bc60974c54e591
   languageName: node
   linkType: hard
 
@@ -5949,6 +6000,13 @@ __metadata:
   version: 1.1.0
   resolution: "filter-obj@npm:1.1.0"
   checksum: 10c0/071e0886b2b50238ca5026c5bbf58c26a7c1a1f720773b8c7813d16ba93d0200de977af14ac143c5ac18f666b2cfc83073f3a5fe6a4e996c49e0863d5500fccf
+  languageName: node
+  linkType: hard
+
+"filter-obj@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "filter-obj@npm:5.1.0"
+  checksum: 10c0/716e8ad2bc352e206556b3e5695b3cdff8aab80c53ea4b00c96315bbf467b987df3640575100aef8b84e812cf5ea4251db4cd672bbe33b1e78afea88400c67dd
   languageName: node
   linkType: hard
 
@@ -9947,6 +10005,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^9.0.0":
+  version: 9.1.0
+  resolution: "query-string@npm:9.1.0"
+  dependencies:
+    decode-uri-component: "npm:^0.4.1"
+    filter-obj: "npm:^5.1.0"
+    split-on-first: "npm:^3.0.0"
+  checksum: 10c0/45aed8f932c350b0d489455700f25960b748247072d7c1e231cc7ac52af54014b7e380ee1b76dd939e767feeacc5bc48130e8c97a440c039fd3ded9fc9e7fbc4
+  languageName: node
+  linkType: hard
+
 "querystring@npm:^0.2.1":
   version: 0.2.1
   resolution: "querystring@npm:0.2.1"
@@ -10572,6 +10641,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"return-fetch@npm:^0.4.5":
+  version: 0.4.6
+  resolution: "return-fetch@npm:0.4.6"
+  checksum: 10c0/a22c98e6a1f1080ca2d92eb6567d3d4a86e9c945221c3b6e3b37437dd1366b73294d526844fc8637a06a63d8d614bc5d200937323194b6400568f0765e5cd4fa
+  languageName: node
+  linkType: hard
+
 "reusify@npm:^1.0.4":
   version: 1.0.4
   resolution: "reusify@npm:1.0.4"
@@ -11095,6 +11171,13 @@ __metadata:
   version: 1.1.0
   resolution: "split-on-first@npm:1.1.0"
   checksum: 10c0/56df8344f5a5de8521898a5c090023df1d8b8c75be6228f56c52491e0fc1617a5236f2ac3a066adb67a73231eac216ccea7b5b4a2423a543c277cb2f48d24c29
+  languageName: node
+  linkType: hard
+
+"split-on-first@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "split-on-first@npm:3.0.0"
+  checksum: 10c0/a1262eae12b68de235e1a08e011bf5b42c42621985ddf807e6221fb1e2b3304824913ae7019f18436b96b8fab8aef5f1ad80dedd2385317fdc51b521c3882cd0
   languageName: node
   linkType: hard
 

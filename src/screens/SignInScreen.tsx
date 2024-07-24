@@ -3,7 +3,8 @@ import { SafeAreaView, StatusBar, Pressable, Text } from 'react-native';
 import useNavi from '@hooks/useNavi';
 import { isIOS, isWeb } from '@utils/deviceInfo';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
-import { ANDROID_WEB_CLIENT_ID, IOS_WED_CLIENT_ID, IOS_CLIENT_ID } from '@env';
+import { ANDROID_WEB_CLIENT_ID, IOS_WED_CLIENT_ID, IOS_CLIENT_ID, CLIENT_URL } from '@env';
+import { login } from '@react-native-kakao/user';
 
 const SignInScreen = () => {
   const { navigate, navigation } = useNavi();
@@ -18,21 +19,18 @@ const SignInScreen = () => {
     }
   };
 
+  // google 로그인
   GoogleSignin.configure({
     webClientId: isIOS ? IOS_WED_CLIENT_ID : ANDROID_WEB_CLIENT_ID,
     iosClientId: isIOS && IOS_CLIENT_ID,
     offlineAccess: true,
   });
 
-  const alertWeb = () => {
-    if (isWeb) {
-      alert('웹은 아직 로그인이 안 돼요:(');
-    }
-  };
-
   const signInWithGoogle = async () => {
-    alertWeb();
-    if (isWeb) return;
+    if (isWeb) {
+      alert('웹은 아직 구글 로그인이 안 돼요:(');
+      return;
+    }
     try {
       await GoogleSignin.hasPlayServices();
       const res = await GoogleSignin.signIn();
@@ -61,9 +59,23 @@ const SignInScreen = () => {
     }
   };
 
+  // kakao 로그인
   const signInWithKakao = async () => {
-    alertWeb();
-    if (isWeb) return;
+    if (isWeb) {
+      try {
+        await login({ web: { redirectUri: CLIENT_URL, prompt: ['select_account'] } });
+        return;
+      } catch (error) {
+        console.error('Kakao login failed:', error);
+      }
+    }
+
+    try {
+      const res = await login();
+      const idToken = res.idToken;
+    } catch (error) {
+      console.error('Kakao login failed:', error);
+    }
   };
 
   return (
