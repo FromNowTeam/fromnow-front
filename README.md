@@ -20,3 +20,10 @@ xcode version 15.3 사용
 # 실행
 yarn ios
 ```
+
+### web
+
+```bash
+# 실행
+yarn start:web
+```
