@@ -6,4 +6,6 @@ declare module '@env' {
   export const KAKAO_NATIVE_JS_KEY: string;
   export const KAKAO_NATIVE_API_KEY: string;
   export const CLIENT_URL: string;
+  export const BASE_URL: string;
+  export const ENV_MODE: string;
 }

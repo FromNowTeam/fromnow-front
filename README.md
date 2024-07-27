@@ -1,4 +1,4 @@
-`react-native` `tailwindcss` `react-navigation`
+`react-native` `tailwindcss` `react-query` `axios`
 
 🔗 _**<a href="https://fromnow.vercel.app">fromnow deploy link</a>**_
 

@@ -38,7 +38,7 @@ const HomeScreen = () => {
         setKakaoWebIdToken(idToken);
         accessTokenIssued.current = true;
       } catch (error) {
-        console.error('Failed to issue access token:', error);
+        console.error('Failed to issue token:', error);
       }
     };
 

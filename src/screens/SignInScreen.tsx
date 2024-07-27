@@ -5,6 +5,7 @@ import { isIOS, isWeb } from '@utils/deviceInfo';
 import { GoogleSignin, statusCodes, isErrorWithCode } from '@react-native-google-signin/google-signin';
 import { ANDROID_WEB_CLIENT_ID, IOS_WED_CLIENT_ID, IOS_CLIENT_ID, CLIENT_URL } from '@env';
 import { login } from '@react-native-kakao/user';
+import { useSignInGoogle } from '@hooks/query';
 
 const SignInScreen = () => {
   const { navigate, navigation } = useNavi();
@@ -25,6 +26,7 @@ const SignInScreen = () => {
     iosClientId: isIOS && IOS_CLIENT_ID,
     offlineAccess: true,
   });
+  const signInMutation = useSignInGoogle();
 
   const signInWithGoogle = async () => {
     if (isWeb) {
@@ -35,6 +37,7 @@ const SignInScreen = () => {
       await GoogleSignin.hasPlayServices();
       const res = await GoogleSignin.signIn();
       const idToken = res.idToken;
+      signInMutation.mutate(idToken);
     } catch (error) {
       if (isErrorWithCode(error)) {
         switch (error.code) {
@@ -78,6 +81,9 @@ const SignInScreen = () => {
     }
   };
 
+  // test
+  const testButton = async () => {};
+
   return (
     <SafeAreaView className="bg-white">
       <StatusBar barStyle={'light-content'} backgroundColor={'#fff'} />
@@ -89,6 +95,9 @@ const SignInScreen = () => {
       </Pressable>
       <Pressable onPress={signInWithKakao} className="bg-white p-4 text-black m-10 border border-solid border-[#e5e5e5] rounded-lg font-bold">
         <Text>Sign in with Kakao</Text>
+      </Pressable>
+      <Pressable onPress={testButton} className="bg-slate-300 p-4 text-slate-900 m-10 border border-solid border-slate-400 rounded-lg font-bold">
+        <Text>Test</Text>
       </Pressable>
     </SafeAreaView>
   );

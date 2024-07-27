@@ -8,6 +8,7 @@ import { initializeKakaoSDK } from '@react-native-kakao/core';
 
 import HomeScreen from 'screens/HomeScreen';
 import SignInScreen from 'screens/SignInScreen';
+import RQProvider from '@components/provider/RQProvider';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -21,19 +22,23 @@ function App() {
   return (
     <>
       {!isWeb && (
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
-            <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <RQProvider>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
+              <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </RQProvider>
       )}
       {isWeb && (
         <Router>
-          <Routes>
-            <Route path="/" element={<HomeScreen />} />
-            <Route path="/signin" element={<SignInScreen />} />
-          </Routes>
+          <RQProvider>
+            <Routes>
+              <Route path="/" element={<HomeScreen />} />
+              <Route path="/signin" element={<SignInScreen />} />
+            </Routes>
+          </RQProvider>
         </Router>
       )}
     </>

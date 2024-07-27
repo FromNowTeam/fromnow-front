@@ -1,7 +1,5 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-require('dotenv').config();
-const webpack = require('webpack');
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: path.resolve(__dirname, './public/index.html'),
   filename: 'index.html',
@@ -51,18 +49,6 @@ const cssLoader = {
   use: ['style-loader', 'css-loader', 'postcss-loader'],
   include: path.resolve(__dirname, 'src'),
 };
-// 환경 변수
-const DefinePlugin = new webpack.DefinePlugin({
-  'process.env': {
-    ANDROID_WEB_CLIENT_ID: JSON.stringify(process.env.ANDROID_WEB_CLIENT_ID),
-    IOS_WED_CLIENT_ID: JSON.stringify(process.env.IOS_WED_CLIENT_ID),
-    IOS_CLIENT_ID: JSON.stringify(process.env.IOS_CLIENT_ID),
-    KAKAO_NATIVE_APP_KEY: JSON.stringify(process.env.KAKAO_NATIVE_APP_KEY),
-    KAKAO_NATIVE_JS_KEY: JSON.stringify(process.env.KAKAO_NATIVE_JS_KEY),
-    KAKAO_NATIVE_API_KEY: JSON.stringify(process.env.KAKAO_NATIVE_API_KEY),
-    CLIENT_URL: JSON.stringify(process.env.CLIENT_URL),
-  },
-});
 module.exports = {
   entry: path.join(__dirname, 'index.web.js'),
   output: {
@@ -78,7 +64,7 @@ module.exports = {
   module: {
     rules: [tsxLoader, imgLoader, svgLoader, cssLoader],
   },
-  plugins: [HTMLWebpackPluginConfig, DefinePlugin],
+  plugins: [HTMLWebpackPluginConfig],
   devServer: {
     open: true,
     historyApiFallback: true,

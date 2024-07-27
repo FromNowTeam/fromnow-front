@@ -14,6 +14,7 @@ module.exports = {
           '@style': './src/style',
           '@hooks': './src/hooks',
           '@utils': './src/utils',
+          '@api': './src/api',
         },
         extensions: ['.js', '.jsx', '.tsx', '.ios.js', '.android.js'],
       },
