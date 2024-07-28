@@ -1,5 +1,6 @@
 import { ToastProvider } from 'react-native-toast-notifications';
 import React, { ReactNode } from 'react';
+import { View } from 'react-native';
 
 interface Props {
   children: ReactNode;
@@ -7,9 +8,11 @@ interface Props {
 
 const ToastNotiProvider = ({ children }: Props) => {
   return (
-    <ToastProvider placement="top" duration={3000} animationType="slide-in">
-      {children}
-    </ToastProvider>
+    <View>
+      <ToastProvider placement="top" duration={3000} animationType="slide-in">
+        {children}
+      </ToastProvider>
+    </View>
   );
 };
 

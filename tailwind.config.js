@@ -1,12 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './App.{js,jsx,ts,tsx}',
-    './src/**/*.{js,jsx,ts,tsx}',
-    './public/**/*.{js,jsx,ts,tsx,html}',
-  ],
+  content: ['./App.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}', './public/**/*.{js,jsx,ts,tsx,html}'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.w-fit': {
+          width: 'fit-content',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover', 'focus']);
+    },
+  ],
 };
