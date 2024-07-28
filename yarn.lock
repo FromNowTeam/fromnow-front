@@ -3265,6 +3265,7 @@ __metadata:
     react-native-screens: "npm:^3.32.0"
     react-native-svg: "npm:^15.4.0"
     react-native-svg-transformer: "npm:^1.5.0"
+    react-native-toast-notifications: "npm:^3.4.0"
     react-native-web: "npm:^0.19.12"
     react-router-dom: "npm:^6.25.1"
     react-test-renderer: "npm:18.3.1"
@@ -10250,6 +10251,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/c4ab6c9751a439e1a2cdee011689af6b91823e2fbb3734bbe936f2371cae504bc44e23a1c7670eaa7e92ba22301d509633d0f31a2979129bb2319d011a33fe1e
+  languageName: node
+  linkType: hard
+
+"react-native-toast-notifications@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "react-native-toast-notifications@npm:3.4.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/1e60ca9155bd19a2c47670a80f60438dbd88be2a4193d6dedce04f3179a529b5fdc85c4b5283926d383f8641d757ac302b96d1a1eb2760a6424e4b433582ad79
   languageName: node
   linkType: hard
 

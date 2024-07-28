@@ -3,9 +3,11 @@ import { setStorage } from '@utils/storage';
 import { useMutation } from '@tanstack/react-query';
 import useNavi from '@hooks/useNavi';
 import { isWeb } from '@utils/deviceInfo';
+import useToast from '@hooks/useToast';
 
 export const useSignInGoogle = () => {
   const { navigate, navigation } = useNavi();
+  const { showToast } = useToast();
 
   const signInMutation = useMutation({
     mutationFn: getOne,
@@ -19,7 +21,7 @@ export const useSignInGoogle = () => {
       navigation.navigate('Home');
     },
     onError: error => {
-      console.log('로그인에 실패했습니다.', error);
+      showToast(`로그인에 실패했습니다: ${error}`);
     },
   });
 

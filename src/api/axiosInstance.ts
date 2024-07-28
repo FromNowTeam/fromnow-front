@@ -3,6 +3,7 @@ import { getStorage, removeStorage } from '@utils/storage';
 import { BASE_URL } from '@env';
 import axios, { AxiosError } from 'axios';
 import useNavi from '@hooks/useNavi';
+import useToast from '@hooks/useToast';
 
 export const instance = axios.create({
   baseURL: `${BASE_URL}`,
@@ -22,7 +23,8 @@ instance.interceptors.request.use(
     return config;
   },
   async (error: AxiosError) => {
-    console.log('error:', error);
+    const { showToast } = useToast();
+    showToast(`error: ${error}`);
   },
 );
 
@@ -32,6 +34,7 @@ instance.interceptors.response.use(
   },
   async error => {
     const { navigate, navigation } = useNavi();
+    const { showToast } = useToast();
 
     if (error.response?.status === 401 && !error.config._retry) {
       error.config._retry = true;
@@ -41,7 +44,7 @@ instance.interceptors.response.use(
 
     if (error.response?.status === 401 && error.config._retry) {
       await removeStorage('access');
-      console.log('다시 로그인해주세요.');
+      showToast('로그인 세션이 만료되었습니다. 다시 로그인해주세요.');
       if (isWeb) {
         navigate('/signin');
       }

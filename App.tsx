@@ -6,9 +6,10 @@ import { isWeb } from '@utils/deviceInfo';
 import { KAKAO_NATIVE_APP_KEY, KAKAO_NATIVE_JS_KEY, KAKAO_NATIVE_API_KEY } from '@env';
 import { initializeKakaoSDK } from '@react-native-kakao/core';
 
+import RQProvider from '@components/provider/RQProvider';
+import ToastNotiProvider from '@components/provider/ToastProvider';
 import HomeScreen from 'screens/HomeScreen';
 import SignInScreen from 'screens/SignInScreen';
-import RQProvider from '@components/provider/RQProvider';
 
 function App() {
   const Stack = createNativeStackNavigator();
@@ -23,21 +24,25 @@ function App() {
     <>
       {!isWeb && (
         <RQProvider>
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
-              <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
-            </Stack.Navigator>
-          </NavigationContainer>
+          <ToastNotiProvider>
+            <NavigationContainer>
+              <Stack.Navigator>
+                <Stack.Screen name="Home" options={{ headerShown: false }} component={HomeScreen} />
+                <Stack.Screen name="SignIn" options={{ headerShown: false }} component={SignInScreen} />
+              </Stack.Navigator>
+            </NavigationContainer>
+          </ToastNotiProvider>
         </RQProvider>
       )}
       {isWeb && (
         <Router>
           <RQProvider>
-            <Routes>
-              <Route path="/" element={<HomeScreen />} />
-              <Route path="/signin" element={<SignInScreen />} />
-            </Routes>
+            <ToastNotiProvider>
+              <Routes>
+                <Route path="/" element={<HomeScreen />} />
+                <Route path="/signin" element={<SignInScreen />} />
+              </Routes>
+            </ToastNotiProvider>
           </RQProvider>
         </Router>
       )}
