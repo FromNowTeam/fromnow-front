@@ -35,14 +35,18 @@ instance.interceptors.response.use(
   async error => {
     const { navigate, navigation } = useNavi();
     const { showToast } = useToast();
+    const {
+      config,
+      response: { status },
+    } = error;
 
-    if (error.response?.status === 401 && !error.config._retry) {
-      error.config._retry = true;
+    if (status === 401 && !config._retry) {
+      config._retry = true;
       // refresh 토큰 재발급해야 함. 아직 서버 쪽 구현이 안 되어있음
       return;
     }
 
-    if (error.response?.status === 401 && error.config._retry) {
+    if (status === 401 && config._retry) {
       await removeStorage('access');
       showToast('로그인 세션이 만료되었습니다. 다시 로그인해주세요.');
       if (isWeb) {

@@ -10,7 +10,12 @@ module.exports = {
     'no-alert': 'off',
     'curly': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',
-    'prettier/prettier': ['error', { printWidth: 150, bracketSpacing: true }],
+    'prettier/prettier': ['error',
+      {
+        printWidth: 150,
+        bracketSpacing: true
+      }
+    ],
   },
 };
 

@@ -17,3 +17,7 @@
   border-right: 1px solid #E5E5E5;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 36px;
 }
+
+.r-pointerEvents-12vffkv > * {
+  pointer-events: none;
+}
