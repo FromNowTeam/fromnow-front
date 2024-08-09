@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        fnpink: '#FEC7C6',
-        fnblue: '#8EB9E6',
-        fnyellow: '#FEE987',
-        fngreen: '#B0DDC1',
+        fnPink: '#FEC7C6',
+        fnBlue: '#8EB9E6',
+        fnYellow: '#FEE987',
+        fnGreen: '#B0DDC1',
         black900: '#1C1C1E',
         black700: '#6E6D73',
         black500: '#B3B4B9',

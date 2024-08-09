@@ -21,3 +21,59 @@
 .r-pointerEvents-12vffkv > * {
   pointer-events: none;
 }
+
+@font-face {
+  font-family: "UhBee-Bold";
+  src: url("/src/assets/fonts/uhbee/UhBee-Bold.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "UhBee";
+  src: url("/src/assets/fonts/uhbee/UhBee.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Pretendard-Black";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Black.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Bold";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Bold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-ExtraLight";
+  src: url("/src/assets/fonts/pretendard/Pretendard-ExtraLight.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Light";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Light.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Medium";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Medium.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Regular.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-SemiBold";
+  src: url("/src/assets/fonts/pretendard/Pretendard-SemiBold.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Thin";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Thin.otf")
+    format("opentype");
+}
+@font-face {
+  font-family: "Pretendard-Thin";
+  src: url("/src/assets/fonts/pretendard/Pretendard-Thin.otf")
+    format("opentype");
+}
